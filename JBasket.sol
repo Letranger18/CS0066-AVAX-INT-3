@@ -9,24 +9,29 @@ contract JBasket is ERC20, Ownable {
     string private constant _name = "Essential Gold Goods";
     string private constant _symbol = "EGG";
     uint8 private constant _decimals = 18;
-    uint256 private constant _initialSupply = 100;
+    uint256 private _totalSupply = 100;
 
     constructor() ERC20(_name, _symbol) {
-        _mint(msg.sender, _initialSupply);
+        // Mint initial supply to the contract owner (e.g., msg.sender)
+        _mint(msg.sender, _totalSupply);
     }
 
     function mint(address to, uint256 amount) public onlyOwner {
-        require(to != msg.sender, "You cannot mint tokens to your own account!");
+        require(amount > 0, "You can only MINT a value that is higher than 0!");
         _mint(to, amount);
     }
 
     function burn(uint256 amount) public {
-        require(amount > 0, "You cannot burn an amount of 0 or less!");
+        require(amount > 0, "You can only BURN a value that is higher than 0!");
+        require(balanceOf(msg.sender) >= 0, "Insufficient Funds!");
+        _totalSupply -= amount;
         _burn(msg.sender, amount);
+
     }
 
     function transfer(address to, uint256 amount) public override returns (bool) {
         require(msg.sender != to, "You cannot transfer tokens to your own account!");
+        require(balanceOf(msg.sender) > amount, "Insufficient Funds!");
         return super.transfer(to, amount);
     }
 }
