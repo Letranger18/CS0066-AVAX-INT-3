@@ -1,12 +1,10 @@
-# Solidity (Intermediate) Project Assessment 3
+# Solidity (Intermediate) Project Assessment 4
 
-A simple ERC20 sol program that has a custom currency/tokens (EGG) which can be minted, burn, and transfer to each users. It uses OpenZepplin library to ease the operations and process of the program.
+
 
 ## Description
 
-My task is to satisfy the following functionalities:
 
-Any user can `transfer` & `burn` tokens but only contract owner should be able to `mint` tokens.
 
 ## Executing program
 
