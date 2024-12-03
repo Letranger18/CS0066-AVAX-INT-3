@@ -1,13 +1,11 @@
-# Solidity (Intermediate) Project Assessment 4
-
-
+# Solidity (Intermediate) Project Assessment 3
+A simple ERC20 sol program that has a custom currency/tokens (EGG) which can be minted, burn, and transfer to each users. It uses OpenZepplin library to ease the operations and process of the program.
 
 ## Description
-
-
+My task is to satisfy the following functionalities:
+Any user can `transfer` & `burn` tokens but only contract owner should be able to `mint` tokens.
 
 ## Executing program
-
 How to run the program
 * Go to https://remix.ethereum.org/ to compile the code
 * Upload the JBasket.sol to the File Explorer
@@ -22,7 +20,6 @@ How to run the program
 * To transfer, paste the desired address of the recipient and enter the amount to transfer, then click the button. (it will be use the balance of the current addressed that is selected in the top)
   
 ## Authors
-
 John Benedict C. Signo
 - 202110485@fit.edu.ph
 - FEU Institute of Technology - BSCSSE - CS0066 - TN42
